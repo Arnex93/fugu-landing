@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+<defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1B4965"/><stop offset="1" stop-color="#142A4A"/>
+    </linearGradient>
+    <radialGradient id="bodyGrad" cx="0.38" cy="0.30" r="0.85">
+      <stop offset="0" stop-color="#FFB061"/><stop offset="0.62" stop-color="#FF8C42"/><stop offset="1" stop-color="#F07A30"/>
+    </radialGradient>
+    <clipPath id="fishClip"><circle cx="512" cy="512" r="250"/></clipPath>
+  </defs>
+    <polygon points="510.77,266 544.49,217.79 566.88,272.2" fill="#E06A26" stroke="#E06A26" stroke-width="6" stroke-linejoin="round"/><polygon points="617.63,289.83 668.93,261.02 665.49,319.76" fill="#E06A26" stroke="#E06A26" stroke-width="6" stroke-linejoin="round"/><polygon points="703.56,357.66 762.28,353.97 733.7,405.4" fill="#E06A26" stroke="#E06A26" stroke-width="6" stroke-linejoin="round"/><polygon points="751.56,456.06 806.07,478.21 758,512.15" fill="#E06A26" stroke="#E06A26" stroke-width="6" stroke-linejoin="round"/><polygon points="752.1,565.54 791.6,609.15 733.57,618.87" fill="#E06A26" stroke="#E06A26" stroke-width="6" stroke-linejoin="round"/><polygon points="705.1,664.41 721.76,720.84 665.26,704.42" fill="#E06A26" stroke="#E06A26" stroke-width="6" stroke-linejoin="round"/><polygon points="619.84,733.1 610.38,791.17 566.6,751.87" fill="#E06A26" stroke="#E06A26" stroke-width="6" stroke-linejoin="round"/><polygon points="513.23,758 479.51,806.21 457.12,751.8" fill="#E06A26" stroke="#E06A26" stroke-width="6" stroke-linejoin="round"/><polygon points="406.37,734.17 355.07,762.98 358.51,704.24" fill="#E06A26" stroke="#E06A26" stroke-width="6" stroke-linejoin="round"/><polygon points="320.44,666.34 261.72,670.03 290.3,618.6" fill="#E06A26" stroke="#E06A26" stroke-width="6" stroke-linejoin="round"/><polygon points="272.44,567.94 217.93,545.79 266,511.85" fill="#E06A26" stroke="#E06A26" stroke-width="6" stroke-linejoin="round"/><polygon points="271.9,458.46 232.4,414.85 290.43,405.13" fill="#E06A26" stroke="#E06A26" stroke-width="6" stroke-linejoin="round"/><polygon points="318.9,359.59 302.24,303.16 358.74,319.58" fill="#E06A26" stroke="#E06A26" stroke-width="6" stroke-linejoin="round"/><polygon points="404.16,290.9 413.62,232.83 457.4,272.13" fill="#E06A26" stroke="#E06A26" stroke-width="6" stroke-linejoin="round"/>
+    <g transform="translate(512,265) scale(2.6041666666666665)"><path d="M -9 4 Q -2 -18 12 -12 Q 8 -2 9 6 Z" fill="#F07A30"/></g>
+    <circle cx="512" cy="512" r="250" fill="url(#bodyGrad)"/>
+    <ellipse cx="512" cy="649.5" rx="165" ry="115" fill="#FFE9C4" clip-path="url(#fishClip)"/>
+    <ellipse cx="382" cy="547" rx="35" ry="22.5" fill="#FF5D5D" opacity="0.34"/>
+    <ellipse cx="642" cy="547" rx="35" ry="22.5" fill="#FF5D5D" opacity="0.34"/>
+    <g transform="translate(417,472)">
+    <ellipse cx="0" cy="0" rx="55.13" ry="65" fill="#fff"/>
+    <circle cx="0" cy="5" r="15.5" fill="#2B1B12"/>
+    <circle cx="6.5" cy="-3.5" r="6" fill="#fff"/>
+    <path d="M -42 -97.5 Q 0 -122.5 42 -97.5" fill="none" stroke="#8A4520" stroke-width="5.5" stroke-linecap="round"/></g>
+          <g transform="translate(607,472)">
+    <ellipse cx="0" cy="0" rx="55.13" ry="65" fill="#fff"/>
+    <circle cx="0" cy="5" r="15.5" fill="#2B1B12"/>
+    <circle cx="6.5" cy="-3.5" r="6" fill="#fff"/>
+    <path d="M -42 -97.5 Q 0 -122.5 42 -97.5" fill="none" stroke="#8A4520" stroke-width="5.5" stroke-linecap="round"/></g>
+    <path d="M 474.5 587 Q 512 620.75 549.5 587" fill="none" stroke="#7A3A12" stroke-width="5.5" stroke-linecap="round"/></svg>
