@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FUGU! — Puff or Pop</title>
-  <meta name="description" content="FUGU! — Gonfle ton poisson-globe au milieu du récif, encaisse tes points… mais ne le fais pas éclater ! Un jeu d'arcade gratuit, simple et nerveux." />
+  <meta name="description" content="FUGU! — Puff up your pufferfish across the reef, cash in your points… but don't pop! A free, simple, twitchy arcade game." />
   <meta property="og:title" content="FUGU! — Puff or Pop" />
-  <meta property="og:description" content="Gonfle. Encaisse. Ne POP pas. Le jeu d'arcade push-your-luck." />
+  <meta property="og:description" content="Puff up. Cash in. Don't pop. The push-your-luck arcade game." />
   <meta property="og:type" content="website" />
   <link rel="icon" href="fugu.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -15,18 +15,20 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <button id="lang-toggle" class="lang-toggle" aria-label="Language">FR</button>
+
   <div class="bubbles" aria-hidden="true">
     <span></span><span></span><span></span><span></span><span></span><span></span>
   </div>
 
   <header class="hero">
-    <img class="hero-fish" src="fugu.svg" alt="Fugu, le poisson-globe" width="220" height="220" />
+    <img class="hero-fish" src="fugu.svg" alt="Fugu the pufferfish" width="220" height="220" />
     <h1 class="logo">FUGU!</h1>
     <p class="tagline">PUFF&nbsp;OR&nbsp;POP</p>
-    <p class="pitch">Gonfle ton poisson-globe, encaisse tes points…<br />mais ne le fais&nbsp;pas éclater&nbsp;!</p>
+    <p class="pitch" data-i18n="pitch"></p>
     <div class="badges">
-      <span class="badge"> Bientôt sur l'App&nbsp;Store</span>
-      <span class="badge"> Bientôt sur Google&nbsp;Play</span>
+      <span class="badge" data-i18n="badgeIos"></span>
+      <span class="badge" data-i18n="badgeAndroid"></span>
     </div>
   </header>
 
@@ -34,39 +36,85 @@
     <section class="features">
       <article class="card">
         <div class="ico">🫧</div>
-        <h3>Maintiens, puis lâche</h3>
-        <p>Plus tu gonfles, plus tu marques — mais le moindre contact et c'est&nbsp;«&nbsp;AUGH&nbsp;!&nbsp;». Jusqu'où iras-tu&nbsp;?</p>
+        <h3 data-i18n="f1t"></h3>
+        <p data-i18n="f1b"></p>
       </article>
       <article class="card">
         <div class="ico">🐡</div>
-        <h3>Tout un récif d'ennemis</h3>
-        <p>Oursins, méduses, anguilles, crabes, torpilles, baudroie… chacun sa façon de te faire éclater.</p>
+        <h3 data-i18n="f2t"></h3>
+        <p data-i18n="f2b"></p>
       </article>
       <article class="card">
         <div class="ico">🌊</div>
-        <h3>Le Récif du jour</h3>
-        <p>Un défi quotidien identique pour tous. Bats ton record, garde ta série, partage ton score.</p>
+        <h3 data-i18n="f3t"></h3>
+        <p data-i18n="f3b"></p>
       </article>
       <article class="card">
         <div class="ico">✨</div>
-        <h3>Power-ups &amp; skins</h3>
-        <p>Bouclier, ralenti, score&nbsp;×2, et des skins à débloquer par tes exploits. 100&nbsp;% gratuit.</p>
+        <h3 data-i18n="f4t"></h3>
+        <p data-i18n="f4b"></p>
       </article>
     </section>
 
     <section class="cta">
-      <h2>Gonfle. Encaisse. Ne POP pas.</h2>
-      <p>Disponible bientôt sur iOS et Android.</p>
+      <h2 data-i18n="ctaH"></h2>
+      <p data-i18n="ctaP"></p>
     </section>
   </main>
 
   <footer>
     <p class="foot-logo">FUGU!</p>
     <nav>
-      <a href="privacy.html">Confidentialité</a>
-      <a href="mailto:contact@example.com">Contact</a>
+      <a href="privacy.html" data-i18n="navPrivacy"></a>
+      <a href="mailto:[email]" data-i18n="navContact"></a>
     </nav>
-    <p class="copyright">© 2026 FUGU! — Tous droits réservés.</p>
+    <p class="copyright">© 2026 FUGU!</p>
   </footer>
+
+  <script>
+    const I18N = {
+      en: {
+        pitch: "Puff up your pufferfish, cash in your points…<br />just don't pop it!",
+        badgeIos: "Coming soon to the App Store",
+        badgeAndroid: "Coming soon to Google Play",
+        f1t: "Hold, then release", f1b: "The more you puff, the more you score — but one touch and it's “AUGH!”. How far will you go?",
+        f2t: "A whole reef of enemies", f2b: "Sea urchins, jellyfish, eels, crabs, torpedoes, an anglerfish… each with its own way to pop you.",
+        f3t: "The Daily Reef", f3b: "One daily challenge, the same for everyone. Beat your record, keep your streak, share your score.",
+        f4t: "Power-ups & skins", f4b: "Shield, slow-mo, double score, and skins unlocked by your feats. 100% free.",
+        ctaH: "Puff up. Cash in. Don't pop.", ctaP: "Coming soon on iOS and Android.",
+        navPrivacy: "Privacy", navContact: "Contact",
+      },
+      fr: {
+        pitch: "Gonfle ton poisson-globe, encaisse tes points…<br />mais ne le fais&nbsp;pas éclater&nbsp;!",
+        badgeIos: "Bientôt sur l'App Store",
+        badgeAndroid: "Bientôt sur Google Play",
+        f1t: "Maintiens, puis lâche", f1b: "Plus tu gonfles, plus tu marques — mais le moindre contact et c'est « AUGH ! ». Jusqu'où iras-tu ?",
+        f2t: "Tout un récif d'ennemis", f2b: "Oursins, méduses, anguilles, crabes, torpilles, baudroie… chacun sa façon de te faire éclater.",
+        f3t: "Le Récif du jour", f3b: "Un défi quotidien identique pour tous. Bats ton record, garde ta série, partage ton score.",
+        f4t: "Power-ups & skins", f4b: "Bouclier, ralenti, score ×2, et des skins à débloquer par tes exploits. 100 % gratuit.",
+        ctaH: "Gonfle. Encaisse. Ne pop pas.", ctaP: "Bientôt disponible sur iOS et Android.",
+        navPrivacy: "Confidentialité", navContact: "Contact",
+      },
+    };
+
+    function applyLang(lang) {
+      const dict = I18N[lang] || I18N.en;
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-i18n]').forEach((el) => {
+        el.innerHTML = dict[el.dataset.i18n] ?? '';
+      });
+      // Le bouton propose l'AUTRE langue.
+      document.getElementById('lang-toggle').textContent = lang === 'fr' ? 'EN' : 'FR';
+      try { localStorage.setItem('fugu_lang', lang); } catch (e) {}
+    }
+
+    const saved = (() => { try { return localStorage.getItem('fugu_lang'); } catch (e) { return null; } })();
+    const initial = saved || ((navigator.language || 'en').toLowerCase().startsWith('fr') ? 'fr' : 'en');
+    applyLang(initial);
+
+    document.getElementById('lang-toggle').addEventListener('click', () => {
+      applyLang(document.documentElement.lang === 'fr' ? 'en' : 'fr');
+    });
+  </script>
 </body>
 </html>

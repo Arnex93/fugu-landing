@@ -137,3 +137,22 @@ footer nav a {
 }
 footer nav a:hover { opacity: 1; color: var(--lagoon); }
 .copyright { color: var(--muted); font-size: 13px; opacity: 0.7; }
+
+/* Bouton de bascule de langue (coin haut droit) */
+.lang-toggle {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 10;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 212, 71, 0.5);
+  background: rgba(0, 0, 0, 0.4);
+  color: var(--gold);
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+}
+.lang-toggle:hover { border-color: var(--gold); }

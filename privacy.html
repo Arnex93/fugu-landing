@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FUGU! — Politique de confidentialité</title>
+  <title>FUGU! — Privacy Policy</title>
   <link rel="icon" href="fugu.svg" type="image/svg+xml" />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Nunito:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
@@ -15,13 +15,75 @@
     .doc p, .doc li { color: var(--muted); line-height: 1.6; font-size: 16px; }
     .doc ul { padding-left: 22px; margin-top: 8px; }
     .doc a { color: var(--lagoon); }
+    .lang-block { display: none; }
+    .lang-block.active { display: block; }
   </style>
 </head>
 <body>
-  <div class="doc">
+  <button id="lang-toggle" class="lang-toggle" aria-label="Language">FR</button>
+
+  <!-- English -->
+  <div class="doc lang-block" data-lang="en">
+    <h1>Privacy Policy</h1>
+    <p class="updated">FUGU! — Last updated: June 24, 2026</p>
+    <p>FUGU! (“the app”) is a free, ad-supported game published by
+      <strong>[Publisher]</strong>. This policy explains what data is processed
+      when you play. In short: the app asks for no account and keeps your
+      progress <strong>only on your device</strong>.</p>
+
+    <h2>1. Data we collect</h2>
+    <p>We (the publisher) collect and store <strong>no personal data</strong> on
+      any server. Specifically:</p>
+    <ul>
+      <li><strong>Game progress</strong> (best scores, Daily Reef streak,
+        unlocked skins, settings, stats): stored locally on your device. It is
+        never transmitted and is erased if you uninstall the app.</li>
+      <li><strong>No account, login, location or contacts</strong> are
+        requested or collected.</li>
+    </ul>
+
+    <h2>2. Advertising (Google AdMob)</h2>
+    <p>The app shows ads via <strong>Google AdMob</strong>. To operate, AdMob and
+      its partners may process device identifiers (e.g. the advertising ID) and
+      usage data to serve and measure ads. This processing is performed by
+      Google; see
+      <a href="https://policies.google.com/technologies/partner-sites">how Google uses data</a>
+      and <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</p>
+    <ul>
+      <li><strong>Consent (EU/EEA, UK, Switzerland)</strong>: on first launch, a
+        consent screen (Google UMP) lets you accept or decline personalized ads.</li>
+      <li><strong>iOS</strong>: an App Tracking Transparency prompt lets you
+        allow or deny use of the advertising identifier for tracking.</li>
+    </ul>
+
+    <h2>3. Notifications</h2>
+    <p>If you allow them, the app schedules <strong>local notifications</strong>
+      (Daily Reef and streak reminders). They are generated on your device,
+      with no server, and can be disabled anytime in your device settings.</p>
+
+    <h2>4. Children</h2>
+    <p>The app targets a general audience and is not specifically directed at
+      children under 13. We do not knowingly collect personal data from children.</p>
+
+    <h2>5. Your choices</h2>
+    <ul>
+      <li>Change or withdraw ad consent and tracking via your device settings.</li>
+      <li>Disable notifications in your device settings.</li>
+      <li>Delete all local data by uninstalling the app.</li>
+    </ul>
+
+    <h2>6. Changes</h2>
+    <p>This policy may be updated; the date at the top shows the latest revision.</p>
+
+    <h2>7. Contact</h2>
+    <p>For any question about this policy: <a href="mailto:[email]">[email]</a>.</p>
+    <p style="margin-top:40px;"><a href="index.html">← Back</a></p>
+  </div>
+
+  <!-- Français -->
+  <div class="doc lang-block" data-lang="fr">
     <h1>Politique de confidentialité</h1>
     <p class="updated">FUGU! — Dernière mise à jour : 24 juin 2026</p>
-
     <p>FUGU! (« l'application ») est un jeu gratuit financé par la publicité,
       édité par <strong>[Éditeur]</strong>. Cette politique explique quelles
       données sont traitées lorsque vous jouez. En résumé : l'application ne
@@ -36,8 +98,8 @@
         du jour, skins débloqués, réglages, statistiques) : enregistrée
         localement sur votre appareil. Elle n'est jamais transmise et est
         effacée si vous désinstallez l'application.</li>
-      <li><strong>Aucun compte, aucun identifiant de connexion, aucune
-        localisation, aucun contact</strong> ne sont demandés ni collectés.</li>
+      <li><strong>Aucun compte, identifiant de connexion, localisation ou
+        contact</strong> n'est demandé ni collecté.</li>
     </ul>
 
     <h2>2. Publicité (Google AdMob)</h2>
@@ -72,7 +134,7 @@
     <h2>5. Vos choix</h2>
     <ul>
       <li>Modifier ou retirer le consentement publicitaire et le suivi via les
-        réglages de votre appareil (section confidentialité / publicités).</li>
+        réglages de votre appareil.</li>
       <li>Désactiver les notifications dans les réglages de votre appareil.</li>
       <li>Supprimer toutes les données locales en désinstallant l'application.</li>
     </ul>
@@ -84,8 +146,23 @@
     <h2>7. Contact</h2>
     <p>Pour toute question relative à cette politique :
       <a href="mailto:[email]">[email]</a>.</p>
-
     <p style="margin-top:40px;"><a href="index.html">← Retour</a></p>
   </div>
+
+  <script>
+    function applyLang(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('.lang-block').forEach((el) => {
+        el.classList.toggle('active', el.dataset.lang === lang);
+      });
+      document.getElementById('lang-toggle').textContent = lang === 'fr' ? 'EN' : 'FR';
+      try { localStorage.setItem('fugu_lang', lang); } catch (e) {}
+    }
+    const saved = (() => { try { return localStorage.getItem('fugu_lang'); } catch (e) { return null; } })();
+    applyLang(saved || ((navigator.language || 'en').toLowerCase().startsWith('fr') ? 'fr' : 'en'));
+    document.getElementById('lang-toggle').addEventListener('click', () => {
+      applyLang(document.documentElement.lang === 'fr' ? 'en' : 'fr');
+    });
+  </script>
 </body>
 </html>
